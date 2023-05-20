@@ -46,8 +46,10 @@ const selectImageButton = document.querySelector('.selectImageButton');
 const fileInput = document.querySelector('.fileInput');
 const previewImage = document.querySelector('.previewImage');
 
-selectImageButton.addEventListener('click', function() {
+selectImageButton.addEventListener('click', function(event) {
+    event.preventDefault();
     fileInput.click();
+    event.preventDefault();
 });
 
 fileInput.addEventListener('change', function(event) {
@@ -56,6 +58,7 @@ fileInput.addEventListener('change', function(event) {
         const reader = new FileReader();
         reader.onload = function(e) {
             previewImage.src = e.target.result;
+            fileInput.value = ''; // Clear the file input value after setting the image source
         };
         reader.readAsDataURL(file);
     }
