@@ -138,6 +138,7 @@ button {
     height: 10rem;
     border-radius: 50%;
     background-color: white;
+    object-fit: cover;
 }
 
 
