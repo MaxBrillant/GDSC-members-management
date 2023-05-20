@@ -38,6 +38,33 @@ addButton.addEventListener('click', () => {
 
 
 
+//When we click the "Change profile picture" button, it shall trigger the file picker and select an image.
+//Once the image is selected, we want to set it on the preview image.
+
+
+const selectImageButton = document.querySelector('.selectImageButton');
+const fileInput = document.querySelector('.fileInput');
+const previewImage = document.querySelector('.previewImage');
+
+selectImageButton.addEventListener('click', function() {
+    fileInput.click();
+});
+
+fileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
+
+
+
 //Each time we select a programming language ,
 //we want to add it to our programming list
 
