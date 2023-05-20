@@ -122,7 +122,7 @@ button {
 
 .teamMember h2 {
     margin-top: 1rem;
-    margin-bottom: -0.5rem;
+    /* margin-bottom: 0.5rem; */
     font-size: 1.2rem;
 }
 
@@ -143,8 +143,8 @@ button {
 
 ul {
     position: absolute;
-    top: 0;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     padding: 0;
     list-style: none;
     background: #f2f2f23b;
@@ -179,6 +179,7 @@ ul li {
     color: #333;
     border-radius: 0.2rem;
     text-align: left;
+    font-size: smaller;
     vertical-align: middle;
 }
 .actionButton:hover {
@@ -233,7 +234,8 @@ ul li {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: rgb(43, 206, 143);
+    background-color: rgb(255, 196, 35);
+    border: 0.1rem solid rgb(187, 140, 13);
     margin: 0.2rem;
     padding: 0.3rem;
     font-size: 0.7rem;
@@ -263,4 +265,58 @@ ul li {
 .socialButton img:hover {
     width: 2.5rem;
     height: 2.5rem;
+}
+
+
+
+
+
+
+
+.popup-background {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.popup-content {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    margin: 5% auto;
+    padding: 2rem;
+    max-width: 30rem;
+    width: auto;
+}
+
+
+.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.language {
+    background-color: rgb(255, 196, 35);
+    border: 0.1rem solid rgb(187, 140, 13);
+    border-radius: 0.2rem;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+}
+.language span{
+    color: black;
+    max-width: 13rem; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.3rem;
+}
+.language button {
+    margin: auto;
+    vertical-align: middle;
+    font-size: small;
 }
