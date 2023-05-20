@@ -46,10 +46,8 @@ const selectImageButton = document.querySelector('.selectImageButton');
 const fileInput = document.querySelector('.fileInput');
 const previewImage = document.querySelector('.previewImage');
 
-selectImageButton.addEventListener('click', function(event) {
-    event.preventDefault();
+selectImageButton.addEventListener('click', function() {
     fileInput.click();
-    event.preventDefault();
 });
 
 fileInput.addEventListener('change', function(event) {
