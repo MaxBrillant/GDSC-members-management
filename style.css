@@ -229,15 +229,17 @@ ul li {
 }
 
 .technology {
-    color: black;
-    max-width: 13rem; 
+    color: rgba(0, 0, 0, 0.678);
+    max-width: 13rem;
+    height: 1.2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     background-color: rgb(255, 196, 35);
     border: 0.1rem solid rgb(187, 140, 13);
     margin: 0.2rem;
-    padding: 0.3rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
     font-size: 0.7rem;
     border-radius: 0.2rem;
 }
@@ -289,6 +291,7 @@ ul li {
     border-radius: 0.4rem;
     margin: 5% auto;
     padding: 2rem;
+    padding-top: 1rem;
     max-width: 30rem;
     width: auto;
 }
@@ -301,8 +304,8 @@ ul li {
 }
 
 .language {
-    background-color: rgb(255, 196, 35);
-    border: 0.1rem solid rgb(187, 140, 13);
+    background-color: transparent;
+    border: 0.1rem solid black;
     border-radius: 0.2rem;
     margin: 0.2rem;
     font-size: 0.8rem;
