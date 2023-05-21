@@ -59,19 +59,19 @@
             </div>
             <div class="overflow-y-scroll form-content">
                 <div class="mb-4">
-                    <p class="profile"><img class="previewImage" src="/Images/catherine_ratemo_H1JwUOh.webp" alt=""></p>
+                    <p class="profile"><img class="previewImage" alt=""></p>
                     <button class="customButton selectImageButton"> Change the profile picture</button>
                     <input type="file" class="fileInput" accept=".jpg, .jpeg, .png, .webp" style="display:none">
                 </div>
                 
                 <div class="mb-4">
                     <label for="memberName" class="form-label">Full name*</label>
-                    <input type="text" class="form-control" id="memberName" placeholder="Write your name here">
+                    <input type="text" class="form-control firstName" id="memberName" placeholder="Write your name here">
                 </div>
                 
                 <div class="mb-4">
                     <label for="emailAddress" class="form-label">Email address*</label>
-                    <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+                    <input type="email" class="form-control emailAddress" id="emailAddress" placeholder="name@example.com">
                 </div>
                 
                 <div class="mb-4">
@@ -120,22 +120,23 @@
                 
                 <div class="mb-4">
                     <label for="twitter" class="form-label">Twitter account</label>
-                    <input type="text" class="form-control" id="twitter" placeholder="Write the link to the Twitter account">
+                    <input type="text" class="form-control twitter" id="twitter" placeholder="Write the link to the Twitter account">
                 </div>
                 
                 <div class="mb-4">
                     <label for="linkedin" class="form-label">LinkedIn account</label>
-                    <input type="text" class="form-control" id="linkedin" placeholder="Write the link to the LinkedIn account">
+                    <input type="text" class="form-control linkedin" id="linkedin" placeholder="Write the link to the LinkedIn account">
                 </div>
                 
                 <div class="mb-3">
                     <label for="github" class="form-label">Github account</label>
-                    <input type="text" class="form-control" id="github" placeholder="Write the link to the Github account">
+                    <input type="text" class="form-control github" id="github" placeholder="Write the link to the Github account">
                 </div>
             </div>
             <div class="mb-lg-2 p-1 d-flex flex-wrap align-items-center justify-content-end border-top border-2">
-                <button class="customButton">Save member</button> 
-                <button class="customButton2">Cancel</button> 
+                <span class="errorMessage text-danger" style="display: none">Make sure you write your name and email.</span>
+                <button class="customButton saveMember">Save member</button> 
+                <button class="customButton2 cancelButton">Cancel</button> 
             </div>
         </div>
     </div>

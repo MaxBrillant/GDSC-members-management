@@ -116,7 +116,7 @@ button {
 .team {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     padding: 1rem;
 }
@@ -153,11 +153,12 @@ button {
 }
 
 
+
 .profile img {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    background-color: white;
+    background-color: rgb(179, 179, 179);
     object-fit: cover;
 }
 
@@ -310,7 +311,9 @@ ul li {
 .popup-content {
     background-color: #fff;
     border-radius: 0.4rem;
-    margin: 5% auto;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 0.3rem 2rem;
     padding-top: 1rem;
     max-width: 30rem;
@@ -319,8 +322,7 @@ ul li {
 
 .form-content {
     position: relative;
-    height: calc(63vh + 4em);
-    max-height: fit-content;
+    height: calc(62vh + 2rem);
     padding: 0.5rem;
 }
 
