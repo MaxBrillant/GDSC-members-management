@@ -22,7 +22,7 @@ body {
 header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: center;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.774);
     align-items: center;
@@ -51,8 +51,8 @@ header {
 .logo {
     flex: auto;
     display: flex;
-    align-items: start;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
 }
 
 .members, .logo {
