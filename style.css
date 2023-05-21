@@ -99,6 +99,19 @@ button {
     color: white;
 }
 
+.customButton2 {
+    background-color: #7c8086d5;
+    border: 0.2rem solid #ffffff;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    padding: 0.6rem 1rem;
+    font-size: 16px;
+}
+.customButton2:hover {
+    background-color: #7c8086;
+    color: white;
+}
+
 
 .team {
     display: flex;
@@ -298,12 +311,18 @@ ul li {
     background-color: #fff;
     border-radius: 0.4rem;
     margin: 5% auto;
-    padding: 2rem;
+    padding: 0.3rem 2rem;
     padding-top: 1rem;
     max-width: 30rem;
     width: auto;
 }
 
+.form-content {
+    position: relative;
+    height: calc(63vh + 4em);
+    max-height: fit-content;
+    padding: 0.5rem;
+}
 
 .language-list {
     display: flex;
