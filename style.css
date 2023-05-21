@@ -21,8 +21,8 @@ body {
 
 header {
     display: flex;
-    justify-content: end;
     flex-wrap: wrap;
+    justify-content: end;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.774);
     align-items: center;
@@ -33,11 +33,18 @@ header {
     margin-left: 1.5rem;
 }
 
-.members p {
+.count {
+    min-width: 3rem;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
-    margin-right: 0.5rem;
+    background-color: #4286f450;
+    border: 0.2rem solid #4285F4;
     color: #4285F4;
-    font-size: medium;
+    border-radius: 50rem;
+    font-size: larger;
     font-weight: 600;
 }
 
