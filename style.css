@@ -55,7 +55,8 @@ header {
     justify-content: center;
 }
 
-.members, .logo {
+.members,
+.logo {
     margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
@@ -107,6 +108,7 @@ button {
     padding: 0.6rem 1rem;
     font-size: 16px;
 }
+
 .customButton2:hover {
     background-color: #7c8086;
     color: white;
@@ -188,6 +190,7 @@ ul li {
     border-radius: 50%;
     border: none;
 }
+
 .actions:hover {
     color: #fff;
     background: #9393936e;
@@ -205,6 +208,7 @@ ul li {
     font-size: smaller;
     vertical-align: middle;
 }
+
 .actionButton:hover {
     background: #b8bec9fd;
 }
@@ -218,7 +222,7 @@ ul li {
     left: 0;
 }
 
-.actions img, 
+.actions img,
 .actionButton img {
     vertical-align: middle;
     width: 1rem;
@@ -310,6 +314,7 @@ ul li {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .popup-content {
     background-color: #fff;
     border-radius: 0.4rem;
@@ -341,14 +346,16 @@ ul li {
     margin: 0.2rem;
     font-size: 0.8rem;
 }
-.language span{
+
+.language span {
     color: black;
-    max-width: 13rem; 
+    max-width: 13rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0.3rem;
 }
+
 .language button {
     margin: auto;
     vertical-align: middle;
