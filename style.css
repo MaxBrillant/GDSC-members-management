@@ -80,7 +80,7 @@ button {
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-.customButton {
+.custom-button {
     background-color: #4286f4d5;
     border: 0.2rem solid #ffffff;
     border-radius: 0.5rem;
@@ -89,18 +89,18 @@ button {
     font-size: 16px;
 }
 
-.customButton img {
+.custom-button img {
     width: 1.3rem;
     height: 1.3rem;
     vertical-align: middle;
 }
 
-.customButton:hover {
+.custom-button:hover {
     background-color: #4285F4;
     color: white;
 }
 
-.customButton2 {
+.custom-button2 {
     background-color: #7c8086d5;
     border: 0.2rem solid #ffffff;
     border-radius: 0.5rem;
@@ -109,7 +109,7 @@ button {
     font-size: 16px;
 }
 
-.customButton2:hover {
+.custom-button2:hover {
     background-color: #7c8086;
     color: white;
 }
@@ -124,7 +124,7 @@ button {
     padding: 1rem;
 }
 
-.teamMember {
+.team-member {
     position: relative;
     width: 15rem;
     max-width: 20rem;
@@ -139,17 +139,17 @@ button {
     transition: all 0.3s ease-in-out;
 }
 
-.teamMember:hover {
+.team-member:hover {
     border: 1px solid black;
 }
 
-.teamMember h2 {
+.team-member h2 {
     margin-top: 1rem;
     margin-bottom: 0.2rem;
     font-size: 1.2rem;
 }
 
-.teamMember p {
+.team-member p {
     margin-bottom: 0rem;
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.7);
@@ -198,7 +198,7 @@ ul li {
 }
 
 
-.actionButton {
+.action-button {
     width: 5rem;
     border: none;
     padding: 0.5rem;
@@ -209,7 +209,7 @@ ul li {
     vertical-align: middle;
 }
 
-.actionButton:hover {
+.action-button:hover {
     background: #b8bec9fd;
 }
 
@@ -223,7 +223,7 @@ ul li {
 }
 
 .actions img,
-.actionButton img {
+.action-button img {
     vertical-align: middle;
     width: 1rem;
     height: 1rem;
@@ -235,7 +235,7 @@ ul li {
         display: none;
     }
 
-    .teamMember:hover .actions {
+    .team-member:hover .actions {
         display: block;
     }
 }
@@ -278,7 +278,7 @@ ul li {
     align-items: center;
 }
 
-.socialButton {
+.social-button {
     vertical-align: middle;
     margin: 0 0.3rem;
     padding: 0.2rem;
@@ -286,13 +286,13 @@ ul li {
     background-color: transparent;
 }
 
-.socialButton img {
+.social-button img {
     vertical-align: middle;
     width: 2rem;
     height: 2rem;
 }
 
-.socialButton img:hover {
+.social-button img:hover {
     width: 2.5rem;
     height: 2.5rem;
 }
