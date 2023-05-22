@@ -3,8 +3,8 @@ loadMembersIntoTheApp();
 //We want to deal with the opening and closing of the "new member" popup.
 const popupBackground = document.querySelector(".popup-background");
 const closeButton = document.querySelector(".close-popup");
-const addButton = document.querySelector(".addMember");
-const cancelButton = document.querySelector(".cancelButton");
+const addButton = document.querySelector(".add-member");
+const cancelButton = document.querySelector(".cancel-button");
 
 popupBackground.addEventListener("click", (event) => {
   if (event.target === popupBackground) {
@@ -29,9 +29,9 @@ cancelButton.addEventListener("click", () => {
 //When we click the "Change profile picture" button, it shall trigger the file picker and select an image.
 //Once the image is selected, we want to set it on the preview image.
 
-const selectImageButton = document.querySelector(".selectImageButton");
-const fileInput = document.querySelector(".fileInput");
-const previewImage = document.querySelector(".previewImage");
+const selectImageButton = document.querySelector(".select-image-button");
+const fileInput = document.querySelector(".file-input");
+const previewImage = document.querySelector(".preview-image");
 
 selectImageButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -81,7 +81,7 @@ function createLanguageElement(languageName) {
   language.className = "language";
 
   const name = document.createElement("span");
-  name.className = "languageName";
+  name.className = "language-name";
   name.innerHTML = languageName;
   language.appendChild(name);
 
@@ -102,7 +102,7 @@ function disableSelectedLanguageOption(languageName) {
 }
 
 function handleLanguageCloseButtonClick(event) {
-  const languageName = event.target.parentElement.querySelector(".languageName").innerText;
+  const languageName = event.target.parentElement.querySelector(".language-name").innerText;
   enableLanguageOption(languageName);
   languageList.removeChild(event.target.parentElement);
 }
@@ -118,14 +118,14 @@ function enableLanguageOption(languageName) {
 
 //When we click on the "Add member" button, we are going to create a new member object and store it in local memory
 
-const addMemberButton = document.querySelector(".saveMember");
-const fullNameField = document.querySelector(".fullName");
-const emailAddressField = document.querySelector(".emailAddress");
+const addMemberButton = document.querySelector(".save-member");
+const fullNameField = document.querySelector(".full-name");
+const emailAddressField = document.querySelector(".email-address");
 const roleField = document.querySelector(".role-select");
 const twitterField = document.querySelector(".twitter");
 const linkedinField = document.querySelector(".linkedin");
 const githubField = document.querySelector(".github");
-const error = document.querySelector(".errorMessage");
+const error = document.querySelector(".error-message");
 
 //This is the selected member that will be edited or deleted
 let selectedMemberIndex = -1;
@@ -258,7 +258,7 @@ function loadMembersIntoTheApp() {
 
     members.forEach((member, index) => {
       const teamMember = document.createElement("div");
-      teamMember.className = "teamMember";
+      teamMember.className = "team-member";
       team.appendChild(teamMember);
 
       const ul = document.createElement("ul");
@@ -291,7 +291,7 @@ function loadMembersIntoTheApp() {
 
       const editLi = document.createElement("li");
       const editButton = document.createElement("button");
-      editButton.className = "actionButton";
+      editButton.className = "action-button";
       const editImg = document.createElement("img");
       editImg.src = "/Images/Icons/edit.svg";
       editButton.innerHTML = " Edit";
@@ -333,7 +333,7 @@ function loadMembersIntoTheApp() {
 
       const deleteLi = document.createElement("li");
       const deleteButton = document.createElement("button");
-      deleteButton.className = "actionButton";
+      deleteButton.className = "action-button";
       const deleteImg = document.createElement("img");
       deleteImg.src = "/Images/Icons/delete.svg";
       deleteButton.innerHTML = " Delete";
@@ -395,7 +395,7 @@ function loadMembersIntoTheApp() {
       if (member.twitterLink !== "") {
         const twitterButton = document.createElement("a");
         twitterButton.href = member.twitterLink;
-        twitterButton.className = "socialButton";
+        twitterButton.className = "social-button";
         const twitterImg = document.createElement("img");
         twitterImg.src = "/Images/Icons/twitter.svg";
         twitterButton.appendChild(twitterImg);
@@ -405,7 +405,7 @@ function loadMembersIntoTheApp() {
       if (member.linkedinLink !== "") {
         const linkedinButton = document.createElement("a");
         linkedinButton.href = member.linkedinLink;
-        linkedinButton.className = "socialButton";
+        linkedinButton.className = "social-button";
         const linkedinImg = document.createElement("img");
         linkedinImg.src = "/Images/Icons/linkedin.svg";
         linkedinButton.appendChild(linkedinImg);
@@ -415,7 +415,7 @@ function loadMembersIntoTheApp() {
       if (member.githubLink !== "") {
         const githubButton = document.createElement("a");
         githubButton.href = member.githubLink;
-        githubButton.className = "socialButton";
+        githubButton.className = "social-button";
         const githubImg = document.createElement("img");
         githubImg.src = "/Images/Icons/github.svg";
         githubButton.appendChild(githubImg);
