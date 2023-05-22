@@ -1,6 +1,6 @@
 # GDSC Members Management Repository
 
-![Members Management](https://github.com/your-username/repo-name/blob/main/images/members-management.png)
+![Members Management](https://github.com/MaxBrillant/GDSC-members-management/Images/Screenshot.png)
 
 This repository contains a web application for managing members of the GDSC (Google Developer Student Club). The application allows users to add, edit, and delete members.
 
