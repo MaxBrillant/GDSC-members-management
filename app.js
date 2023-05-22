@@ -17,8 +17,6 @@ closeButton.addEventListener("click", () => {
 addButton.addEventListener("click", () => {
   clearForm();
   popupBackground.style.display = "block";
-  let fullName = document.querySelector(".fullName");
-  fullName.focus();
   //scroll to top
   previewImage.scrollIntoView({ behavior: 'smooth' });
   languageList.innerHTML = "";
@@ -308,7 +306,6 @@ function loadMembersIntoTheApp() {
         fullNameField.value = member.fullName;
 
         //scroll to top
-        fullNameField.focus();
         previewImage.scrollIntoView({ behavior: 'smooth' });
 
         emailAddressField.value = member.emailAddress;
