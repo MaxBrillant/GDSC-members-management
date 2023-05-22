@@ -208,6 +208,10 @@ function deleteMember(index) {
 }
 
 function clearForm() {
+    
+    //Scroll to the top
+
+
   if (popupBackground.style.display == "none") {
     //setting back the values to default
 
@@ -295,10 +299,12 @@ function loadMembersIntoTheApp() {
       editLi.appendChild(editButton);
 
       editButton.addEventListener("click", () => {
+        
         popupBackground.style.display = "flex";
         selectedMemberIndex = index;
 
         fullNameField.value = member.fullName;
+        fullNameField.focus();
         emailAddressField.value = member.emailAddress;
         previewImage.src = member.profileImageLink;
 
