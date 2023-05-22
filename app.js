@@ -424,11 +424,15 @@ function loadMembersIntoTheApp() {
     });
   } else {
     counter.style.display = "none";
+
+    let noMember = document.createElement('div');
     const title = document.createElement("h1");
     title.innerText = "There are no members yet";
     const info = document.createElement("p");
     info.innerText = "Start by adding some members to the GDSC member list.";
-    team.appendChild(title);
-    team.appendChild(info);
+    noMember.appendChild(title);
+    noMember.appendChild(info);
+
+    team.appendChild(noMember);
   }
 }
