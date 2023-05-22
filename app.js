@@ -21,6 +21,8 @@ closeButton.addEventListener('click', () => {
 addButton.addEventListener('click', () => {
     clearForm();
     popupBackground.style.display = 'block';
+    let fullName = document.querySelector('.fullName');
+    fullName.focus();
     languageList.innerHTML = '';
 })
 
@@ -123,7 +125,7 @@ function setSelectedLanguage (languageName) {
 
 
 const addMemberButton = document.querySelector(".saveMember");
-const fullNameField = document.querySelector('.firstName');
+const fullNameField = document.querySelector('.fullName');
 const emailAddressField = document.querySelector('.emailAddress');
 const roleField = document.querySelector('.role-select');
 const twitterField = document.querySelector('.twitter');
@@ -259,166 +261,183 @@ function loadMembersIntoTheApp() {
     const members = getAllMembers();
     let team = document.querySelector('.team');
     team.innerHTML = '';
+    let counter = document.querySelector(".count");
+
+    if(members.length > 0) {
 
     //Updating the counter
-    let counter = document.querySelector(".count");
+    counter.style.display = 'flex';
     counter.innerText = members.length;
+
     members.forEach((member, index) => {
-            const teamMember = document.createElement('div');
-            teamMember.className = 'teamMember';
-            team.appendChild(teamMember);
-          
-            const ul = document.createElement('ul');
-            const li = document.createElement('li');
-          
-            const actionsButton = document.createElement('button');
-            actionsButton.className = 'actions';
-            const actionsImg = document.createElement('img');
-            actionsImg.src = '/Images/Icons/three-dots.svg';
-            actionsButton.appendChild(actionsImg);
-          
-            const dropdown = document.createElement('ul');
-            dropdown.className = 'dropdown';
-
-            // Action button for each member should
-            // have a actions button, and when it is clicked we want to show
-            //  the dropdown with the buttons "edit" and "delete"
-
-            //when the actions button is clicked, we want to show the actions in the dropdown
-            actionsButton.addEventListener('click', function (event) {
-                event.stopPropagation();
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            });
-            //if the actions button has been clicked, anything else that is clicked will 
-            // make the dropdown disappear
-            document.addEventListener('click', () => {
-                dropdown.style.display = 'none';
-            });
-          
-
-
-
-            const editLi = document.createElement('li');
-            const editButton = document.createElement('button');
-            editButton.className = 'actionButton';
-            const editImg = document.createElement('img');
-            editImg.src = '/Images/Icons/edit.svg';
-            editButton.innerHTML = ' Edit';
-            editButton.insertBefore(editImg, editButton.childNodes[0]);
-            editLi.appendChild(editButton);
-
-
-            editButton.addEventListener('click', ()=> {
-                popupBackground.style.display = 'block';
-                selectedMemberIndex = index;
-
-                fullNameField.value = member.fullName;
-                emailAddressField.value = member.emailAddress;
-                previewImage.src = member.profileImageLink;
-
-                for (let i = 0; i < roleField.options.length; i++) {
-                    if (roleField.options[i].text === member.role) {
-                        roleField.selectedIndex = i;
-                    }
-                }
-
-                //load all the languages and display them
-                languageList.innerHTML = '';
-                for (let i = 0; i < languageSelect.options.length; i++) {
-                    languageSelect.selectedIndex = 0;
-                    languageSelect.options[i].disabled = false;
-                }
-                member.languages.forEach(language => {
-                    setSelectedLanguage(language);
-                });
-                twitterField.value = member.twitterLink;
-                linkedinField.value = member.linkedinLink;
-                githubField.value = member.githubLink;
-            })
-          
-            const deleteLi = document.createElement('li');
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'actionButton';
-            const deleteImg = document.createElement('img');
-            deleteImg.src = '/Images/Icons/delete.svg';
-            deleteButton.innerHTML = ' Delete';
-            deleteButton.insertBefore(deleteImg, deleteButton.childNodes[0]);
-            deleteLi.appendChild(deleteButton);
-
-            deleteButton.addEventListener('click', ()=> {
-                deleteMember(index);
-                loadMembersIntoTheApp();
-            });
-          
-            dropdown.appendChild(editLi);
-            dropdown.appendChild(deleteLi);
-            li.appendChild(actionsButton);
-            li.appendChild(dropdown);
-            ul.appendChild(li);
-            teamMember.appendChild(ul);
-          
-            const profileP = document.createElement('p');
-            profileP.className = 'profile';
-            const profileImg = document.createElement('img');
-            profileImg.src = member.profileImageLink;
-            profileImg.alt = '';
-            profileP.appendChild(profileImg);
-            teamMember.appendChild(profileP);
-          
-            const nameH2 = document.createElement('h2');
-            nameH2.textContent = member.fullName;
-            teamMember.appendChild(nameH2);
-          
-            const roleP = document.createElement('p');
-            roleP.textContent = member.role;
-            teamMember.appendChild(roleP);
-          
-            const technologiesDiv = document.createElement('div');
-            technologiesDiv.className = 'technologies';
-
-            if(member.languages.length > 0) {
-                member.languages.forEach(language => {    
-                    const tech1 = document.createElement('span');
-                    tech1.className = 'technology';
-                    tech1.textContent = language;
-                    technologiesDiv.appendChild(tech1);
-                });
-                teamMember.appendChild(technologiesDiv);
-            }
-            
-            const socialDiv = document.createElement('div');
-            socialDiv.className = 'social';
-
-            if(member.twitterLink !== '' || member.linkedinLink !== '' || member.githubLink !== '') {
-            teamMember.appendChild(socialDiv);
-            }
-
-            if(member.twitterLink !== '') {
-                const twitterButton = document.createElement('button');
-                twitterButton.className = 'socialButton';
-                const twitterImg = document.createElement('img');
-                twitterImg.src = '/Images/Icons/twitter.svg';
-                twitterButton.appendChild(twitterImg);
-                socialDiv.appendChild(twitterButton);
-            }
+        const teamMember = document.createElement('div');
+        teamMember.className = 'teamMember';
+        team.appendChild(teamMember);
         
-            if(member.linkedinLink !== '') {
-                const linkedinButton = document.createElement('button');
-                linkedinButton.className = 'socialButton';
-                const linkedinImg = document.createElement('img');
-                linkedinImg.src = '/Images/Icons/linkedin.svg';
-                linkedinButton.appendChild(linkedinImg);
-                socialDiv.appendChild(linkedinButton);
-            }
+        const ul = document.createElement('ul');
+        const li = document.createElement('li');
         
-            if(member.githubLink !== '') {
-                const githubButton = document.createElement('button');
-                githubButton.className = 'socialButton';
-                const githubImg = document.createElement('img');
-                githubImg.src = '/Images/Icons/github.svg';
-                githubButton.appendChild(githubImg);
-                socialDiv.appendChild(githubButton);
+        const actionsButton = document.createElement('button');
+        actionsButton.className = 'actions';
+        const actionsImg = document.createElement('img');
+        actionsImg.src = '/Images/Icons/three-dots.svg';
+        actionsButton.appendChild(actionsImg);
+        
+        const dropdown = document.createElement('ul');
+        dropdown.className = 'dropdown';
+
+        // Action button for each member should
+        // have a actions button, and when it is clicked we want to show
+        //  the dropdown with the buttons "edit" and "delete"
+
+        //when the actions button is clicked, we want to show the actions in the dropdown
+        actionsButton.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+        //if the actions button has been clicked, anything else that is clicked will 
+        // make the dropdown disappear
+        document.addEventListener('click', () => {
+            dropdown.style.display = 'none';
+        });
+        
+
+
+
+        const editLi = document.createElement('li');
+        const editButton = document.createElement('button');
+        editButton.className = 'actionButton';
+        const editImg = document.createElement('img');
+        editImg.src = '/Images/Icons/edit.svg';
+        editButton.innerHTML = ' Edit';
+        editButton.insertBefore(editImg, editButton.childNodes[0]);
+        editLi.appendChild(editButton);
+
+
+        editButton.addEventListener('click', ()=> {
+            popupBackground.style.display = 'flex';
+            selectedMemberIndex = index;
+
+            fullNameField.value = member.fullName;
+            emailAddressField.value = member.emailAddress;
+            previewImage.src = member.profileImageLink;
+
+            for (let i = 0; i < roleField.options.length; i++) {
+                if (roleField.options[i].text === member.role) {
+                    roleField.selectedIndex = i;
+                }
             }
-          
+
+            //load all the languages and display them
+            languageList.innerHTML = '';
+            for (let i = 0; i < languageSelect.options.length; i++) {
+                languageSelect.selectedIndex = 0;
+                languageSelect.options[i].disabled = false;
+            }
+            member.languages.forEach(language => {
+                setSelectedLanguage(language);
+            });
+            twitterField.value = member.twitterLink;
+            linkedinField.value = member.linkedinLink;
+            githubField.value = member.githubLink;
+        })
+        
+        const deleteLi = document.createElement('li');
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'actionButton';
+        const deleteImg = document.createElement('img');
+        deleteImg.src = '/Images/Icons/delete.svg';
+        deleteButton.innerHTML = ' Delete';
+        deleteButton.insertBefore(deleteImg, deleteButton.childNodes[0]);
+        deleteLi.appendChild(deleteButton);
+
+        deleteButton.addEventListener('click', ()=> {
+            deleteMember(index);
+            loadMembersIntoTheApp();
+        });
+        
+        dropdown.appendChild(editLi);
+        dropdown.appendChild(deleteLi);
+        li.appendChild(actionsButton);
+        li.appendChild(dropdown);
+        ul.appendChild(li);
+        teamMember.appendChild(ul);
+        
+        const profileP = document.createElement('p');
+        profileP.className = 'profile';
+        const profileImg = document.createElement('img');
+        profileImg.src = member.profileImageLink;
+        profileImg.alt = '';
+        profileP.appendChild(profileImg);
+        teamMember.appendChild(profileP);
+        
+        const nameH2 = document.createElement('h2');
+        nameH2.textContent = member.fullName;
+        teamMember.appendChild(nameH2);
+        
+        const roleP = document.createElement('p');
+        roleP.textContent = member.role;
+        teamMember.appendChild(roleP);
+        
+        const technologiesDiv = document.createElement('div');
+        technologiesDiv.className = 'technologies';
+
+        if(member.languages.length > 0) {
+            member.languages.forEach(language => {    
+                const tech1 = document.createElement('span');
+                tech1.className = 'technology';
+                tech1.textContent = language;
+                technologiesDiv.appendChild(tech1);
+            });
+            teamMember.appendChild(technologiesDiv);
+        }
+        
+        const socialDiv = document.createElement('div');
+        socialDiv.className = 'social';
+
+        if(member.twitterLink !== '' || member.linkedinLink !== '' || member.githubLink !== '') {
+        teamMember.appendChild(socialDiv);
+        }
+
+        if(member.twitterLink !== '') {
+            const twitterButton = document.createElement('a');
+            twitterButton.href = member.twitterLink
+            twitterButton.className = 'socialButton';
+            const twitterImg = document.createElement('img');
+            twitterImg.src = '/Images/Icons/twitter.svg';
+            twitterButton.appendChild(twitterImg);
+            socialDiv.appendChild(twitterButton);
+        }
+
+        if(member.linkedinLink !== '') {
+            const linkedinButton = document.createElement('a');
+            linkedinButton.href = member.linkedinLink;
+            linkedinButton.className = 'socialButton';
+            const linkedinImg = document.createElement('img');
+            linkedinImg.src = '/Images/Icons/linkedin.svg';
+            linkedinButton.appendChild(linkedinImg);
+            socialDiv.appendChild(linkedinButton);
+        }
+
+        if(member.githubLink !== '') {
+            const githubButton = document.createElement('a');
+            githubButton.href = member.githubLink;
+            githubButton.className = 'socialButton';
+            const githubImg = document.createElement('img');
+            githubImg.src = '/Images/Icons/github.svg';
+            githubButton.appendChild(githubImg);
+            socialDiv.appendChild(githubButton);
+        }       
     });
+    
+    }else {
+        counter.style.display = 'none';
+        const title = document.createElement('h1');
+        title.innerText = 'There are no members yet';
+        const info = document.createElement('p');
+        info.innerText = 'Start by adding some members to the GDSC member list.';
+        team.appendChild(title);
+        team.appendChild(info);
+
+    }
 }

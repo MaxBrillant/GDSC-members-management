@@ -270,6 +270,7 @@ ul li {
 .social {
     display: flex;
     height: 3rem;
+    align-items: center;
 }
 
 .socialButton {
