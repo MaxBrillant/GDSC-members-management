@@ -118,6 +118,7 @@ button {
     flex-wrap: wrap;
     align-items: start;
     justify-content: center;
+    text-align: center;
     padding: 1rem;
 }
 
