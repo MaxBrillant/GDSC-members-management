@@ -14,11 +14,11 @@ This repository contains a web application for managing members of the GDSC (Goo
 
 ## Live Demo
 
-You can access the live demo of the Members Management application [here](https://gdsc-members-management.vercel.app).
+You can access the live demo of the application [here](https://gdsc-members-management.vercel.app).
 
 ## Technologies Used
 
-The Members Management application is built using the following technologies:
+The application is built using the following technologies:
 
 - HTML: Used for structuring the web pages.
 - CSS: Used for styling the application and making it visually appealing.
@@ -40,6 +40,6 @@ To get started with the project locally, follow these steps:
 
 ## Contributing
 
-Contributions to the Members Management project are welcome. If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Contributions to this project are welcome. If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 Please ensure that your contributions align with the project's coding style and follow the guidelines outlined in the repository.
