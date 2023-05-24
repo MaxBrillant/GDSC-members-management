@@ -1,4 +1,4 @@
-# GDSC Members Management Repository
+# GDSC Members Management
 
 ![Members Management](https://raw.githubusercontent.com/MaxBrillant/GDSC-members-management/main/Images/Screenshot.png)
 
@@ -6,7 +6,7 @@ This repository contains a web application for managing members of the GDSC (Goo
 
 ## Features
 
-- Add new members with their information such as name, email, and role.
+- Add new members with their information such as name, email, and role and store them on local storage.
 - Edit existing member details, including their name, email, and role.
 - Delete members from the list.
 - Responsive design that adapts to different screen sizes.
